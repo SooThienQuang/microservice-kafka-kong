@@ -1,0 +1,25 @@
+_format_version: "3.0"
+
+services:
+  - name: user-service
+    url: http://user-service:8081
+    routes:
+      - name: user-route
+        paths:
+          - /api/v1/user
+        strip_path: false
+
+  - name: product-service
+    url: http://product-service:8082
+    routes:
+      - name: product-route
+        paths:
+          - /api/v1/product
+        strip_path: false
+  - name: authentication-service
+    url: http://authentication-service:8080
+    routes:
+      - name: authentication-route
+        paths:
+          - /api/v1/authentication
+        strip_path: false
